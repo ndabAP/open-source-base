@@ -1,0 +1,30 @@
+{
+  "name": "open-source-base",
+  "version": "1.0.0",
+  "description": "A base application for open source projects.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "babel src --watch --out-dir dist",
+    "build": "npm run lint && npm run test && rm -rf dist && babel src -d dist",
+    "lint": "eslint src/**",
+    "test": "mocha --require babel-polyfill --require babel-register"
+  },
+  "author": "Julian Claus <kontakt@julian-claus.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {}
+}
