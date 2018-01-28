@@ -1,30 +1,46 @@
 {
-  "name": "open-source-base",
-  "version": "1.0.0",
-  "description": "A base application for open source projects.",
-  "main": "dist/index.js",
+  "name": "open-source-base-javascript",
+  "version": "0.0.0",
+  "description": "Base project for projects with JavaScript",
+  "main": "lib/library.js",
   "scripts": {
-    "dev": "babel src --watch --out-dir dist",
-    "build": "npm run lint && npm run test && rm -rf dist && babel src -d dist",
-    "lint": "eslint src/**",
-    "test": "mocha --require babel-polyfill --require babel-register"
+    "build": "npm run test && webpack --env dev && webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
+    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js"
   },
-  "author": "Julian Claus <kontakt@julian-claus.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndabAP/open-source-base"
+  },
+  "keywords": [
+    "webpack",
+    "es6",
+    "starter",
+    "library",
+    "universal",
+    "umd",
+    "commonjs"
+  ],
+  "author": "Julian Claus <kontakt@julian-caus.de>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "eslint": "^4.14.0",
+    "eslint": "^4.13.1",
     "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^4.0.1"
-  },
-  "dependencies": {}
+    "mocha": "^4.0.1",
+    "webpack": "^3.10.0",
+    "yargs": "^10.0.3"
+  }
 }
