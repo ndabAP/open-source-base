@@ -13,15 +13,7 @@
     "type": "git",
     "url": "https://github.com/ndabAP/open-source-base"
   },
-  "keywords": [
-    "webpack",
-    "es6",
-    "starter",
-    "library",
-    "universal",
-    "umd",
-    "commonjs"
-  ],
+  "keywords": [],
   "author": "Julian Claus <kontakt@julian-caus.de>",
   "license": "MIT",
   "devDependencies": {
