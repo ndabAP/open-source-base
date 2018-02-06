@@ -5,6 +5,7 @@
   "main": "lib/library.js",
   "scripts": {
     "build": "npm run test && webpack --env dev && webpack --env build",
+    "exec": "node ./node_modules/.bin/babel-node src/index.js",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js"
