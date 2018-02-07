@@ -1,1 +1,4 @@
 .idea
+vendor/**/.git
+vendor/*
+!vendor/vendor.json
