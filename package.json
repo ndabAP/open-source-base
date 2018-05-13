@@ -1,0 +1,32 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+  ],
+  "main": "dist/bundle.js",
+  "scripts": {
+    "dev": "webpack --progress --colors --watch --env dev",
+    "build": "webpack --env dev && webpack --env build",
+    "test:watch": "mocha --require ts-node/register --watch-extensions ts,tsx -w 'test/**/*.{js,ts,tsx}'"
+  },
+  "author": "Julian Claus <kontakt@julian-claus.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "ts-node": "^6.0.3",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
+  },
+  "dependencies": {}
+}
