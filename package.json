@@ -2,13 +2,13 @@
   "name": "open-source-base-javascript",
   "version": "0.0.0",
   "description": "Base project for projects with JavaScript",
-  "main": "lib/library.js",
+  "main": "dist/library.min.js",
   "scripts": {
-    "build": "npm run test && webpack --env dev && webpack --env build",
+    "build": "webpack",
     "exec": "node ./node_modules/.bin/babel-node src/index.js",
-    "dev": "webpack --progress --colors --watch --env dev",
-    "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js"
+    "dev": "webpack --watch",
+    "test": "mocha --require @babel/register --colors ./test/*.spec.js",
+    "test:watch": "mocha --require @babel/register --colors -w ./test/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -18,23 +18,23 @@
   "author": "Julian Claus <kontakt@julian-caus.de>",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.0.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/register": "^7.0.0-beta.54",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.0-beta",
     "chai": "^4.1.2",
-    "eslint": "^4.13.1",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint": "^5.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "mocha": "^4.0.1",
-    "webpack": "^3.10.0",
-    "yargs": "^10.0.3"
+    "mocha": "^5.2.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "yargs": "^12.0.1"
   }
 }

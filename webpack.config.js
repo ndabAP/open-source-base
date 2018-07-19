@@ -1,35 +1,45 @@
-const webpack = require('webpack')
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
-const env = require('yargs').argv.env // use --env with webpack 2
 
-let libraryName = 'library'
-
-let plugins = [], outputFile
-
-if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({minimize: true}))
-  outputFile = libraryName + '.min.js'
-} else {
-  outputFile = libraryName + '.js'
-}
+let plugins = []
 
 const config = {
-  entry: __dirname + '/src/index.js',
+  entry: `${__dirname}/src/index.js`,
+  mode: 'development',
   devtool: 'source-map',
   output: {
-    path: __dirname + '/lib',
-    filename: outputFile,
-    library: libraryName,
+    path: `${__dirname}/dist`,
+    filename: 'library.min.js',
+    library: 'library',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
+
+  optimization: {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true
+        },
+        sourceMap: true
+      })
+    ]
+  },
+
   module: {
     rules: [
       {
         test: /(\.jsx|\.js)$/,
         loader: 'babel-loader',
-        exclude: /(node_modules|bower_components)/
+        exclude: /(node_modules|bower_components)/,
+        options: {
+          presets: ['@babel/preset-env']
+        }
       },
       {
         test: /(\.jsx|\.js)$/,
@@ -38,10 +48,12 @@ const config = {
       }
     ]
   },
+
   resolve: {
     modules: [path.resolve('./node_modules'), path.resolve('./src')],
     extensions: ['.json', '.js']
   },
+
   plugins: plugins
 }
 
