@@ -21,7 +21,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.0-beta",
     "chai": "^4.1.2",
     "eslint": "^5.2.0",
