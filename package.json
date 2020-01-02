@@ -19,8 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.7",
-    "@babel/register": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.7.7",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
@@ -33,7 +33,7 @@
     "eslint-plugin-standard": "^3.1.0",
     "mocha": "^5.2.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "yargs": "^12.0.5"
   }
